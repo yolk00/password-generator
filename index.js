@@ -1,7 +1,7 @@
 let passwordEl = document.getElementById("pass-el");
 
 // is text in the password field?
-let filled = false;
+let isFilled = false;
 
 let password = {
   length: 8,
@@ -77,6 +77,8 @@ let upperCheckEl = document.getElementById("upper");
 let numbCheckEl = document.getElementById("numb");
 let puncCheckEl = document.getElementById("punc");
 
+let copyEl = document.getElementById("copy-el");
+
 let slider = document.getElementById("password-slider");
 let output = document.getElementById("slider-value");
 output.innerHTML = slider.value; // display slider default value
@@ -86,7 +88,13 @@ slider.oninput = function () {
   password.length = this.value;
 };
 
+function newPassword() {
+  reset();
+  generate();
+}
+
 function generate() {
+  isFilled = true;
   if (
     lowerCheckEl.checked &&
     upperCheckEl.checked &&
@@ -202,12 +210,5 @@ function generate() {
 
 function reset() {
   passwordEl.textContent = "";
+  isFilled = false;
 }
-
-// function isFilled() {
-//   if (passwordEl.textContent === "") {
-//     filled = false;
-//   } else {
-//     filled = true;
-//   }
-// }

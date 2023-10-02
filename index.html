@@ -11,8 +11,11 @@
       <div class="content">
         <h1>Generate a Random Password</h1>
         <p id="pass-el" class="box mono"></p>
-        <button id="generate-el" onclick="generate()">Generate Password</button>
+        <button id="generate-el" onclick="newPassword()">
+          Generate Password
+        </button>
         <button id="reset-el" onclick="reset()">Reset</button>
+        <button id="copy-el" onclick="copy()">Copy</button>
         <div class="slide-container">
           <p class="label">Length: <span id="slider-value"></span></p>
           <input
